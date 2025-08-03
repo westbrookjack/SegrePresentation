@@ -1,10 +1,8 @@
-SegrePresentation
-=================
+# SegrePresentation
 
 A Macaulay2 package for computing presentations of Segre products of graded rings.
 
-Overview
---------
+## Overview
 
 The `SegrePresentation` package provides tools for constructing a presentation of the Segre product
 of two graded rings over a common coefficient field. Given two rings `R` and `S`, the main function
@@ -14,58 +12,54 @@ product, and computes the defining relations.
 This package is particularly useful for explicit calculations in projective geometry and commutative
 algebra involving Segre embeddings.
 
-Installation
-------------
+## Installation
 
 Clone this repository and load the `.m2` file in Macaulay2:
-    ```macaulay2
-    load "SegrePresentation.m2"
-    ```
 
-Usage
------
+```macaulay2
+load "SegrePresentation.m2"
+```
+
+## Usage
 
 The main function is:
-    ```macaulay2
-    segrePresentation(R, S, VariableName => "p")
+
+```macaulay2
+segrePresentation(R, S, VariableName => "p")
+```
 
 - `R`, `S`: Homogeneous coordinate rings over the same coefficient field.
 - `VariableName => prefix`: (Optional) A string or symbol used as the prefix for the new variables
   in the target ring. Defaults to `p`.
-  ```
 
-Example:
+### Example
 
-    ```macaulay2
-    R = QQ[x_0..x_2, Degrees => {{1},{2},{3}}];
-    S = QQ[y_0..y_1, Degrees => {{3},{5}}];
+```macaulay2
+R = QQ[x_0..x_2, Degrees => {{1},{2},{3}}];
+S = QQ[y_0..y_1, Degrees => {{3},{5}}];
 
-    load "SegrePresentation.m2";
-    (segreMap, segreRing) = segrePresentation(R, S, VariableName => "z");
+load "SegrePresentation.m2";
+(segreMap, segreRing) = segrePresentation(R, S, VariableName => "z");
 
-    describe segreRing
-    ```
+describe segreRing
+```
 
 This will produce a presentation for the Segre product of `R` with `S` over their shared coefficient ring `QQ`.
 
-Requirements
-------------
+## Requirements
 
 - Macaulay2 version 1.25.0 or higher (recommended)
-- The `Polyhedra` packages should be installed (only used internally if required)
+- The `Polyhedra` package should be installed (only used internally if required)
 
-Author
-------
+## Author
 
 Jack Westbrook  
 https://westbrookjack.github.io
 
-License
--------
+## License
 
 None
 
-Acknowledgments
-------
+## Acknowledgments
 
 Thanks to Austyn Simpson for suggesting the idea behind this package and for helpful discussions.
