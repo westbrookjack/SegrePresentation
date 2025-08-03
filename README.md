@@ -18,22 +18,25 @@ Installation
 ------------
 
 Clone this repository and load the `.m2` file in Macaulay2:
-
+    ```macaulay2
     load "SegrePresentation.m2"
+    ```
 
 Usage
 -----
 
 The main function is:
-
+    ```macaulay2
     segrePresentation(R, S, VariableName => "p")
 
 - `R`, `S`: Homogeneous coordinate rings over the same coefficient field.
 - `VariableName => prefix`: (Optional) A string or symbol used as the prefix for the new variables
   in the target ring. Defaults to `p`.
+  ```
 
 Example:
 
+    ```macaulay2
     R = QQ[x_0..x_2, Degrees => {{1},{2},{3}}];
     S = QQ[y_0..y_1, Degrees => {{3},{5}}];
 
@@ -41,6 +44,7 @@ Example:
     (segreMap, segreRing) = segrePresentation(R, S, VariableName => "z");
 
     describe segreRing
+    ```
 
 This will produce a presentation for the Segre product of `R` with `S` over their shared coefficient ring `QQ`.
 
