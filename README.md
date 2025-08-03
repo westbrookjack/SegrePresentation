@@ -14,10 +14,10 @@ algebra involving Segre embeddings.
 
 ## Installation
 
-Clone this repository and load the `.m2` file in Macaulay2:
+Place the `SegrePresentation.m2` file in your working directory or a directory on Macaulay2’s load path, then load it using:
 
 ```macaulay2
-load "SegrePresentation.m2"
+needsPackage "SegrePresentation"
 ```
 
 ## Usage
