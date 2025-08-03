@@ -26,7 +26,7 @@ Usage
 
 The main function is:
 
-    segrePresentation(R, S, VariableName => prefix)
+    segrePresentation(R, S, VariableName => "p")
 
 - `R`, `S`: Homogeneous coordinate rings over the same coefficient field.
 - `VariableName => prefix`: (Optional) A string or symbol used as the prefix for the new variables
@@ -34,21 +34,21 @@ The main function is:
 
 Example:
 
-    R = QQ[x_0..x_2, Degrees => {{1,0},{1,0},{1,0}}];
-    S = QQ[y_0..y_1, Degrees => {{0,1},{0,1}}];
+    R = QQ[x_0..x_2, Degrees => {{1},{2},{3}}];
+    S = QQ[y_0..y_1, Degrees => {{3},{5}}];
 
     load "SegrePresentation.m2";
-    (segreMap, segreRing) = segrePresentation(R, S, VariableName => "p");
+    (segreMap, segreRing) = segrePresentation(R, S, VariableName => "z");
 
     describe segreRing
 
-This will produce the homogeneous coordinate ring of the Segre embedding ℙ^2 × ℙ^1 → ℙ^5.
+This will produce a presentation for the Segre product of `R` with `S` over their shared coefficient ring `QQ`.
 
 Requirements
 ------------
 
 - Macaulay2 version 1.25.0 or higher (recommended)
-- The `Normaliz` and `Polyhedra` packages should be installed (only used internally if required)
+- The `Polyhedra` packages should be installed (only used internally if required)
 
 Author
 ------
@@ -59,4 +59,9 @@ https://westbrookjack.github.io
 License
 -------
 
-MIT License
+None
+
+Acknowledgments
+------
+
+Thanks to Austyn Simpson for suggesting the idea behind this package and for helpful discussions.
