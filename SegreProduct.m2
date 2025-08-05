@@ -1,7 +1,5 @@
 -- -*- coding: utf-8 -*-
 
-needsPackage "Normaliz"
-
 newPackage(
     "SegrePresentation",
     Version => "0.1",
@@ -54,7 +52,7 @@ segrePresentation(Ring, Ring) := o -> (R, S) -> (
     if numgens tensorRing != m+n then
         error "# of generators of the tensor product of R and S is not equal to the sum of the numbers of generators";
     
-    relList := {};
+    relList := new List;
     for elt in H do (
         monomial := 1;
         for i to m+n-1 do (
